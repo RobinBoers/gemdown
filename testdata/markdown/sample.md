@@ -9,25 +9,29 @@
 
 That's it. Pretty simple. There's also a drop-down option above to switch between various views:
 
-- **Preview:** A live display of the generated HTML as it would render in a browser.
+- **Preview:** A *live* display of the generated HTML as it would render in a browser.
 - **HTML Source:** The generated HTML before your browser makes it pretty.
-- **Lexer Data:** What [marked] uses internally, in case you like gory stuff like this.
-- **Quick Reference:** A brief run-down of how to format things using [markdown].
+- **Lexer Data:** What [Marked] uses internally, in case you like gory stuff like this.
+- **Quick Reference:** A brief run-down of how to format things using [Markdown].
+
+## Rather have an image?
+
+![Some image](/image.jpg)
 
 ## Why Markdown?
 
-It's easy. It's not overly bloated, unlike HTML. Also, as the creator of [markdown] says,
+It's easy. It's not overly bloated, unlike HTML. Also, as the creator of [Markdown] says,
 
 > The overriding design goal for Markdown's
-> formatting syntax is to make it as readable
+> formatting syntax is to make it as readable 
 > as possible. The idea is that a
 > Markdown-formatted document should be
-> publishable as-is, as plain text, without
+> publishable as-is, as plain text, without 
 > looking like it's been marked up with tags
-> or formatting instructions
+> or formatting instructions.
 
-Ready to start writing? Either start changing stuff on the left or
-[clear everything](/demo/?text=) with a simple click.
+Ready to start writing?
+Try searching on [Google](https://google.com) for more info!
 
 [marked]: https://github.com/markedjs/marked/
 [markdown]: http://daringfireball.net/projects/markdown/
