@@ -1,8 +1,12 @@
-# gemdown
+# Gemdown
 
-A very opiniated fork of [gemdown](https://github.com/audiodude/gemdown), a Javascript library for rendering Markdown files in the gemtext format.
+A very opiniated fork of [Gemdown](https://github.com/audiodude/gemdown), a Javascript library for rendering Markdown files in the gemtext format.
 
-## Overview
+This is a more minimal version, without depending on Marked. I also stripped off all features I didn't strictly need, like inline HTML, link achors among some other things. You can see everything Gemdown does in the `testdata` folder.
+
+If this is not what you're looking for, please consider the [upstream](https://github.com/audiodude/gemdown) instead.
+
+## What?
 
 [Gemini](https://gemini.circumlunar.space/) is a recent text-based internet protocol that aims to be more robust than Gopher but more lightweight than the web, and doesn't seek to replace either. You need a special [Gemini client](https://github.com/kr1sp1n/awesome-gemini#clients) to connect to "Gemini capsules" in "Gemspace" (such as `gemini://gemini.circumlunar.space/`).
 
@@ -25,44 +29,30 @@ From `example.js`:
 ```javascript
 import gemdown from 'gemdown';
 
-const markdown = `This is some [Markdown](https://daringfireball.net/projects/markdown/)! Links are extracted to the end of the paragraph.
+const markdown = 
+    `This is some [Markdown](https://daringfireball.net/projects/markdown)! Links are extracted to the end of the paragraph.
 
-Here's a second paragraph! Things like **bold** and _italic_ are ignored unless options are set. Italics will always change to this symbol: \*`;
+     Here's a second paragraph! **Bold** is ignored, but *italics* are kept, but always _converted_ to the * format.`;
 
 const gemtext = gemdown.parse(markdown);
 console.log(gemtext);
 ```
 
-## Principles
+## Features
 
-### Proper line breaks
-
-Line breaks work like this:
-
-- A "hard" line break (two spaces and then `\n`), will result in a line break in gemini.
-- Any "soft" line breaks (without spaces), will be wrapped, just like they would in rendered HTML.
-- Any `<br>` is ignored.
-
-### Usable links
-
-Displaying the links with numbers before them, like the original library does, is not the best way to handle links I think.
-
-In my blogposts, I usually carefully choose the text of the links to properly indicate their location. By removing that context I lose information on Gemini.
-
-Instead, my fork just sets the text of the link as the text of the link. Simple but usable. It results in a bit of duplicated text, but in most cases this isn't such an issue.
+- Collects links and puts them outside the paragraph.
+- Proper line breaks: hard line breaks (two spaces at the end of the line) will become a newline in gemtext; otherwise the newline is ignored.
+- Lists are flattened.
+- If a list item contains just a link or image, it is transformed to a link.
+- Images are transformed to links.
+- Headings level 4-6 and numbered lists are interpreted as paragraphs.
+- Extra empty lines are kept.
+- Italic identifiers are kept, but bold mofifiers are removed.
+- Horizontal lines are kept as is.
+- Smartypants punctuation
 
 ## Stability note
 
 This library is subject to change without any prior notice. It is purely for my own use. If I change my preference and want my blog to look differently, this library will change accordingly.
 
 If you're looking for a stable/reliable library, take a look at the [uptream](https://github.com/audiodude/gemdown).
-
-## Options
-
-The library currently supports the following options:
-
-| Option          | Default | Description                                               |
-|-----------------|---------|-----------------------------------------------------------|
-| stripBold       | true    | Whether to keep the markdown-style bold markings.         |
-| stripItalic     | false   | Whether to strip the markdown-style italic markings.      |
-| stripInlineCode | false   | Whether to strip the markdown-style inline code markings. |

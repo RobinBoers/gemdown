@@ -15,7 +15,7 @@ async function loadGemini(slug) {
 
 // Add new golden slugs here. There should be a <slug>.md file with the input
 // and a <slug>.gmi file with the output, in the appropriate folders.
-const slugs = ["sample", "preformatted", "html_blocks", "entities", "tables"];
+const slugs = ["sample"];
 
 describe('golden files', () => {
   for (const slug of slugs) {

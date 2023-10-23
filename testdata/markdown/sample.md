@@ -1,26 +1,42 @@
-# Marked - Markdown Parser
+# Gemdown
 
-[Marked] lets you convert [Markdown] into HTML. Markdown is a simple text format whose goal is to be very easy to read and write, even when not converted to HTML. This demo page will let you type anything you like and see how it gets converted. Live. No more waiting around.
+This is an example document used to test [Gemdown](https://git.dupunkto.org/~robin/libre0b11/gemdown). Specifically my fork which is is a very *opiniated* version of the [upstream](https://github.com/audiodude/gemdown).
 
-## How To Use The Demo
+It does a lot of things. Forexample, it turns _italics_ into a different kind of *italics*. It doesn't touch words_with under_scores however.
 
-1. Type in stuff on the left.
-2. See the live updates on the right.
+It also extracts links out of paragraphs, as you might have seen. It also does it for list items:
 
-That's it. Pretty simple. There's also a drop-down option above to switch between various views:
+- I have to update to [Debian 13](https://debian.org).
+- Nevermind. [Arch](https://archlinux.org) is better!
+- Nope. [NixOS](https://nixorg.org) FTW!
 
-- **Preview:** A *live* display of the generated HTML as it would render in a browser.
-- **HTML Source:** The generated HTML before your browser makes it pretty.
-- **Lexer Data:** What [Marked] uses internally, in case you like gory stuff like this.
-- **Quick Reference:** A brief run-down of how to format things using [Markdown].
+It converts list items that just contain a link to a link:
 
-## Rather have an image?
+- [Elixir (Programming Language)](https://elixir-lang.org)
+
+It also **strips** all bold modifiers, but keeps `inline code`.
+
+It flattens lists:
+
+- Something
+    - Something else
+        - Another thing
+
+## Images
 
 ![Some image](/image.jpg)
 
-## Why Markdown?
+### Headings
 
-It's easy. It's not overly bloated, unlike HTML. Also, as the creator of [Markdown] says,
+Level 4-6 headings are converted to paragraphs:
+
+#### Header :)
+
+Paragraphs use [Markdown](https://daringfireball.net/projects/markdown/) line wrapping rules.
+That means that this isn't a line break.  
+But this sentence is on a seperate line, because the last one ended with a "hard break", aka two spaces + newline.
+
+Quotes work as well:
 
 > The overriding design goal for Markdown's
 > formatting syntax is to make it as readable 
@@ -30,8 +46,31 @@ It's easy. It's not overly bloated, unlike HTML. Also, as the creator of [Markdo
 > looking like it's been marked up with tags
 > or formatting instructions.
 
-Ready to start writing?
-Try searching on [Google](https://google.com) for more info!
+Yea, that's about it.
 
-[marked]: https://github.com/markedjs/marked/
-[markdown]: http://daringfireball.net/projects/markdown/
+## HTML
+
+<span>Embedded HTML</span> is kept as is; please don't use HTML in your files. It's not really the thing Markdown was made for.
+
+Also,<br> does nothing.
+
+## Code
+
+Preformatted is kept as is. Here's a code snippet:
+
+```javascript
+let x = 10;
+x += 20;
+console.log(x) // => 30
+```
+
+Here's some ASCII art:
+
+```The word "Gemdown", styled in bold letters.
+ e88~~\                                888                                  
+d888      e88~~8e  888-~88e-~88e  e88~\888  e88~-_  Y88b    e    / 888-~88e 
+8888 __  d888  88b 888  888  888 d888  888 d888   i  Y88b  d8b  /  888  888 
+8888   | 8888__888 888  888  888 8888  888 8888   |   Y888/Y88b/   888  888 
+Y888   | Y888    , 888  888  888 Y888  888 Y888   '    Y8/  Y8/    888  888 
+ "88__/   "88___/  888  888  888  "88_/888  "88_-~      Y    Y     888  888 
+```

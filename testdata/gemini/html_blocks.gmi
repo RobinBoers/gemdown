@@ -1,4 +1,0 @@
-Hello, this is an example of a file that contains embedded html! This is after the line break. It should not be a line break in gemini.
-This should however. And this should not.
-
-Look at that!
