@@ -56,3 +56,7 @@ console.log(gemtext);
 This library is subject to change without any prior notice. It is purely for my own use. If I change my preference and want my blog to look differently, this library will change accordingly.
 
 If you're looking for a stable/reliable library, take a look at the [uptream](https://github.com/audiodude/gemdown).
+
+## Options
+
+- **`linkPrefix`**: if specified, all relative links starting with `/` will be prefixed with the given string.

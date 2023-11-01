@@ -1,3 +1,3 @@
-#!/usr/bin/fish
+#!/usr/bin/env fish
 
 bun test
