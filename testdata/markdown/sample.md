@@ -2,7 +2,7 @@
 
 This is an example document used to test [Gemdown](https://git.dupunkto.org/~robin/libre0b11/gemdown). Specifically my fork which is is a very *opiniated* version of the [upstream](https://github.com/audiodude/gemdown).
 
-It does a lot of things. Forexample, it turns _italics_ into a different kind of *italics*. It doesn't touch words_with under_scores however.
+It does a lot of things. Forexample, it ignores some _italics_ but keeps other *italics*. It doesn't touch words_with under_scores however.
 
 It also extracts links out of paragraphs, as you might have seen. It also does it for list items:
 
