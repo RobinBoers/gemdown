@@ -92,3 +92,17 @@ _.d"' ,AP    MM   MM    MM  `"b._MM   `Wb  MM    MM    MM    MM    MM ;Y     MM 
     `bm                   md'  .JMML.   ==== A pubnix/tilde for fun ====                   
 
 ```
+
+## Tables
+
+Here's a table:
+
+| Name  | Surname | Age |
+|-------|---------|-----|
+| Robin | Boers   | 16  |
+| Lize  | Boers   | 15  |
+| Sean  | Ham     | 16  |
+
+On the gemtext side it's turned into a nice code block. 
+Meaning, if you formatted the table nicely in Markdown, it
+will render great on Gemini!
