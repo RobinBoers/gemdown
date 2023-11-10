@@ -4,7 +4,7 @@ This is an example document used to test [Gemdown](https://git.dupunkto.org/~rob
 
 Look out! This is very much a Work In Progress(tm).
 
-It does a lot of things. Forexample, it ignores some _italics_ but keeps other *italics*. It doesn't touch words_with under_scores however.
+It does a lot of things. Forexample, it ignores some _italics_ but keeps other *italics* or /emphasis/. It doesn't touch words_with under_scores however. It also **strips** all bold modifiers, but keeps `inline code`.
 
 It also extracts links out of paragraphs, as you might have seen. It also does it for list items:
 
@@ -15,8 +15,6 @@ It also extracts links out of paragraphs, as you might have seen. It also does i
 It converts list items that just contain a link to a link:
 
 - [Elixir (Programming Language)](https://elixir-lang.org)
-
-It also **strips** all bold modifiers, but keeps `inline code`.
 
 It flattens lists:
 
@@ -52,7 +50,8 @@ Yea, that's about it.
 
 ## HTML
 
-<span>Embedded HTML</span> is kept as is; please don't use HTML in your files. It's not really the thing Markdown was made for.
+<span>Embedded HTML</span> is kept as is; please don't use HTML in your files. 
+It's not really the thing Markdown was made for.
 
 Also,<br> does nothing.
 
@@ -108,3 +107,7 @@ Here's a table:
 On the gemtext side it's turned into a nice code block. 
 Meaning, if you formatted the table nicely in Markdown, it
 will render great on Gemini!
+
+These are some tests with footnotes[^1], weird [linking stuff](/fuck-the-regex-doesnt-work) & [yay](/yay) :)
+
+[^1]: Wowie, a footnote!
