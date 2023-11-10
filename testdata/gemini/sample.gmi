@@ -5,6 +5,8 @@ This is an example document used to test Gemdown. Specifically my fork which is 
 => https://git.dupunkto.org/~robin/libre0b11/gemdown Gemdown
 => https://github.com/audiodude/gemdown upstream
 
+Look out! This is very much a Work In Progress™. 
+
 It does a lot of things. Forexample, it ignores some italics but keeps other *italics*. It doesn't touch words_with under_scores however. 
 
 It also extracts links out of paragraphs, as you might have seen. It also does it for list items: 
