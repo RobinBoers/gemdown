@@ -108,9 +108,9 @@ Here's a table:
 ```
 On the gemtext side it's turned into a nice code block. Meaning, if you formatted the table nicely in Markdown, it will render great on Gemini! 
 
-These are some tests with footnotes[^1], weird linking stuff & yay :) 
+These are some tests with footnotes[1], weird linking stuff & yay :) 
 
 => /fuck-the-regex-doesnt-work linking stuff
 => /yay yay
 
-[^1]: Wowie, a footnote!
+[1] Wowie, a footnote!
